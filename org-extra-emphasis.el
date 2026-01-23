@@ -518,107 +518,125 @@ specified in `org-extra-emphasis-alist'."
   "A face for Org Extra Emphasis."
   :group 'org-extra-emphasis-faces)
 
-(defface org-extra-emphasis-01
-  '((t (:inherit org-extra-emphasis :background "yellow")))
+(defface org-extra-emphasis-bang-bang-face
+  '((t (:background "red")))
   "A face for Org Extra Emphasis."
   :group 'org-extra-emphasis-faces)
 
-(defface org-extra-emphasis-02
-  '((t (:inherit org-extra-emphasis :foreground "red")))
+(defface org-extra-emphasis-bang-at-face
+  '((t (:foreground "red")))
   "A face for Org Extra Emphasis."
   :group 'org-extra-emphasis-faces)
 
-(defface org-extra-emphasis-03
-  '((t (:inherit org-extra-emphasis)))
+(defface org-extra-emphasis-bang-mod-face
+  '((t (:background "orange")))
   "A face for Org Extra Emphasis."
   :group 'org-extra-emphasis-faces)
 
-(defface org-extra-emphasis-04
-  '((t (:inherit org-extra-emphasis)))
+(defface org-extra-emphasis-bang-amp-face
+  '((t (:foreground "orange")))
   "A face for Org Extra Emphasis."
   :group 'org-extra-emphasis-faces)
 
-(defface org-extra-emphasis-05
-  '((t (:inherit org-extra-emphasis)))
+(defface org-extra-emphasis-at-bang-face
+  '((t (:background "green")))
   "A face for Org Extra Emphasis."
   :group 'org-extra-emphasis-faces)
 
-(defface org-extra-emphasis-06
-  '((t (:inherit org-extra-emphasis)))
+(defface org-extra-emphasis-at-at-face
+  '((t (:foreground "green")))
   "A face for Org Extra Emphasis."
   :group 'org-extra-emphasis-faces)
 
-(defface org-extra-emphasis-07
-  '((t (:inherit org-extra-emphasis)))
+(defface org-extra-emphasis-at-mod-face
+  '((t (:background "blue")))
   "A face for Org Extra Emphasis."
   :group 'org-extra-emphasis-faces)
 
-(defface org-extra-emphasis-08
-  '((t (:inherit org-extra-emphasis)))
+(defface org-extra-emphasis-at-amp-face
+  '((t (:foreground "blue")))
   "A face for Org Extra Emphasis."
   :group 'org-extra-emphasis-faces)
 
-(defface org-extra-emphasis-09
-  '((t (:inherit org-extra-emphasis)))
+(defface org-extra-emphasis-mod-bang-face
+  '((t (:background "magenta")))
   "A face for Org Extra Emphasis."
   :group 'org-extra-emphasis-faces)
 
-(defface org-extra-emphasis-10
-  '((t (:inherit org-extra-emphasis)))
+(defface org-extra-emphasis-mod-at-face
+  '((t (:foreground "magenta")))
   "A face for Org Extra Emphasis."
   :group 'org-extra-emphasis-faces)
 
-(defface org-extra-emphasis-11
-  '((t (:inherit org-extra-emphasis)))
+(defface org-extra-emphasis-mod-mod-face
+  '((t (:background "yellow")))
   "A face for Org Extra Emphasis."
   :group 'org-extra-emphasis-faces)
 
-(defface org-extra-emphasis-12
-  '((t (:inherit org-extra-emphasis)))
+(defface org-extra-emphasis-mod-amp-face
+  '((t (:foreground "yellow")))
   "A face for Org Extra Emphasis."
   :group 'org-extra-emphasis-faces)
 
-(defface org-extra-emphasis-13
-  '((t (:inherit org-extra-emphasis)))
+(defface org-extra-emphasis-amp-bang-face
+  '((t (:background "cyan")))
   "A face for Org Extra Emphasis."
   :group 'org-extra-emphasis-faces)
 
-(defface org-extra-emphasis-14
-  '((t (:inherit org-extra-emphasis)))
+(defface org-extra-emphasis-amp-at-face
+  '((t (:foreground "cyan")))
   "A face for Org Extra Emphasis."
   :group 'org-extra-emphasis-faces)
 
-(defface org-extra-emphasis-15
-  '((t (:inherit org-extra-emphasis)))
+(defface org-extra-emphasis-amp-mod-face
+  '((t (:background "purple")))
   "A face for Org Extra Emphasis."
   :group 'org-extra-emphasis-faces)
 
-(defface org-extra-emphasis-16
-  '((t (:inherit org-extra-emphasis)))
+(defface org-extra-emphasis-amp-amp-face
+  '((t (:foreground "purple")))
   "A face for Org Extra Emphasis."
   :group 'org-extra-emphasis-faces)
+
+;; aliases for maintaining backward compatibility
+(put 'org-extra-emphasis-01 'face-alias 'org-extra-emphasis-bang-bang-face)
+(put 'org-extra-emphasis-02 'face-alias 'org-extra-emphasis-bang-at-face)
+(put 'org-extra-emphasis-03 'face-alias 'org-extra-emphasis-bang-mod-face)
+(put 'org-extra-emphasis-04 'face-alias 'org-extra-emphasis-bang-amp-face)
+(put 'org-extra-emphasis-05 'face-alias 'org-extra-emphasis-at-bang-face)
+(put 'org-extra-emphasis-06 'face-alias 'org-extra-emphasis-at-at-face)
+(put 'org-extra-emphasis-07 'face-alias 'org-extra-emphasis-at-mod-face)
+(put 'org-extra-emphasis-08 'face-alias 'org-extra-emphasis-at-amp-face)
+(put 'org-extra-emphasis-09 'face-alias 'org-extra-emphasis-mod-bang-face)
+(put 'org-extra-emphasis-10 'face-alias 'org-extra-emphasis-mod-at-face)
+(put 'org-extra-emphasis-11 'face-alias 'org-extra-emphasis-mod-mod-face)
+(put 'org-extra-emphasis-12 'face-alias 'org-extra-emphasis-mod-amp-face)
+(put 'org-extra-emphasis-13 'face-alias 'org-extra-emphasis-amp-bang-face)
+(put 'org-extra-emphasis-14 'face-alias 'org-extra-emphasis-amp-at-face)
+(put 'org-extra-emphasis-15 'face-alias 'org-extra-emphasis-amp-mod-face)
+(put 'org-extra-emphasis-16 'face-alias 'org-extra-emphasis-amp-amp-face)
 
 ;;;;; Useful Org Setting
 
 (setcar (last org-emphasis-regexp-components) 5)
 
 (defcustom org-extra-emphasis-alist
-  '(("!!" org-extra-emphasis-01)
-    ("!@" org-extra-emphasis-02)
-    ("!%" org-extra-emphasis-03)
-    ("!&" org-extra-emphasis-04)
-    ("@!" org-extra-emphasis-05)
-    ("@@" org-extra-emphasis-06)
-    ("@%" org-extra-emphasis-07)
-    ("@&" org-extra-emphasis-08)
-    ("%!" org-extra-emphasis-09)
-    ("%@" org-extra-emphasis-10)
-    ("%%" org-extra-emphasis-11)
-    ("%&" org-extra-emphasis-12)
-    ("&!" org-extra-emphasis-13)
-    ("&@" org-extra-emphasis-14)
-    ("&%" org-extra-emphasis-15)
-    ("&&" org-extra-emphasis-16))
+  '(("!!" org-extra-emphasis-bang-bang-face)
+    ("!@" org-extra-emphasis-bang-at-face)
+    ("!%" org-extra-emphasis-bang-mod-face)
+    ("!&" org-extra-emphasis-bang-amp-face)
+    ("@!" org-extra-emphasis-at-bang-face)
+    ("@@" org-extra-emphasis-at-at-face)
+    ("@%" org-extra-emphasis-at-mod-face)
+    ("@&" org-extra-emphasis-at-amp-face)
+    ("%!" org-extra-emphasis-mod-bang-face)
+    ("%@" org-extra-emphasis-mod-at-face)
+    ("%%" org-extra-emphasis-mod-mod-face)
+    ("%&" org-extra-emphasis-mod-amp-face)
+    ("&!" org-extra-emphasis-amp-bang-face)
+    ("&@" org-extra-emphasis-amp-at-face)
+    ("&%" org-extra-emphasis-amp-mod-face)
+    ("&&" org-extra-emphasis-amp-amp-face))
   "Alist of emphasis marker and its associated face."
   :group 'org-extra-emphasis
   :type '(repeat
@@ -744,7 +762,7 @@ gets processed to the following \"org\" equivalent
     #+LaTeX_HEADER: \\usepackage{fontspec}
     #+LaTeX_HEADER: \\newfontfamily\\OrgExtraEmphasisAFont{Comic Sans MS}
     #+LaTeX_HEADER: \\newcommand\\textOrgExtraEmphasisA[1]{\\colorbox[HTML]{fff8dc}{{\\OrgExtraEmphasisAFont #1}}}
-    
+
     \\textOrgExtraEmphasisA{org-extra-emphasis-01}
 
 Note the following:
@@ -954,7 +972,7 @@ TIPS for the user:
    register, say SPC, and
 
        (set-register ?\N{SPACE} \"\N{ZERO WIDTH SPACE}\")
-       
+
    and use the \\[insert-register] command on that register to insert
    the ZERO WIDTH SPACE character.
 
