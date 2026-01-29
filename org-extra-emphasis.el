@@ -443,8 +443,9 @@ See `org-extra-emphasis-alist' for MARKER to face mappings."
 			  (hfy-face-to-style-i
 			   (cl-loop with props = (mapcar #'car face-attribute-name-alist)
 				    for prop in props
-				    for value = (face-attribute face prop nil 'default)
-				    unless (eq prop :inherit)
+				    for value = (face-attribute face prop nil nil)
+                    unless (or (eq prop :inherit)
+                               (eq value 'unspecified))
 				    append (list prop value)))
 			  " ")
 	       text))
